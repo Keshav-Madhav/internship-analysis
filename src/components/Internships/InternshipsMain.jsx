@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import {Button} from "@nextui-org/react";
 import InternshipsBarGraph from './InternshipsBarGraph';
+import InternshipsPieChart from './InternshipsPieChart';
 
 const JobsMain = () => {
   return (
@@ -18,6 +19,7 @@ const JobsMain = () => {
       <div className='flex flex-col gap-2 w-full h-[45vh] justify-between'>
         <div className='flex gap-5 items-center w-[71vw] px-2 overflow-x-auto'>
           <InternshipsBarGraph/>
+          <InternshipsPieChart/>
         </div>
         <hr className='w-full h-0.5 bg-gray-700'/>
       </div>

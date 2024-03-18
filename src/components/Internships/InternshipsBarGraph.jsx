@@ -45,6 +45,9 @@ const InternshipsBarGraph = () => {
           display: true,
           text: 'Month',
         },
+        grid: {
+          color: 'rgba(255, 255, 255, 0.05)', // This changes the grid line color to white
+        },
       },
       y: {
         beginAtZero: true,
@@ -52,10 +55,14 @@ const InternshipsBarGraph = () => {
           display: true,
           text: 'Number of Internships',
         },
+        grid: {
+          color: 'rgba(255, 255, 255, 0.05)', // This changes the grid line color to white
+        },
       },
     },
     maintainAspectRatio: false,
   };
+  
 
   return (
     <div className='h-[40vh] w-[50vw]'>
