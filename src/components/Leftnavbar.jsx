@@ -1,22 +1,21 @@
 "use client"
 
-import React from 'react'
 import {Listbox, ListboxItem} from "@nextui-org/react";
 
 const Leftnavbar = () => {
   return (
-    <div className='bg-[#101010] w-[25%] h-[100vh] py-10 flex flex-col gap-[5rem] justify-between'>
+    <div className='bg-[#101010] min-w-[25vw] h-[100vh] py-10 flex flex-col gap-[5rem] justify-between'>
       <h1 className='text-white text-4xl font-bold px-5'>Internship Analyzer</h1>
 
       <Listbox>
         <ListboxItem 
-          key="jobs" 
-          href="/jobs" 
+          key="internships" 
+          href="/internships" 
           showDivider
           className="w-full text-white h-20 px-10"
           description="Look at job listings that fit your skill set"
         > 
-          <p className="text-2xl">Jobs</p>
+          <p className="text-2xl">Internships</p>
         </ListboxItem>
         <ListboxItem 
           key="skills" 
