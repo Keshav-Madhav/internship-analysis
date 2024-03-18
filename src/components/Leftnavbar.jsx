@@ -2,17 +2,16 @@ import React from 'react'
 
 const Leftnavbar = () => {
   return (
-    <div className='bg-purple-300 w-[20%] h-[100vh]'>
+    <div className='bg-lime-100 w-[25%] h-[100vh]'>
         <div>
-        <h2>Hii! i am Leftnavbar</h2>
         <ul>
-            <li>Jobs</li>
-            <li>Companies</li>
-            <li>Skills</li>
-            <li>For you</li>
+            <li className='text-xl text-lime-950'>Jobs</li>
+            <li className='text-xl text-lime-950'>Companies</li>
+            <li className='text-xl text-lime-950'>Skills</li>
+            <li className='text-xl text-lime-950'>For you</li>
         </ul>
         </div>
-        <button>Profile :D </button>
+        <button className='text-xl text-lime-950'>Profile :D </button>
     </div>
   )
 }
