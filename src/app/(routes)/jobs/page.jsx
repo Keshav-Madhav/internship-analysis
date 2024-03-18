@@ -4,7 +4,9 @@ import Leftnavbar from '@/components/Leftnavbar'
 
 const page = () => {
   return (
-    <div><Leftnavbar/></div>
+    <div className='w-full h-full flex gap-2 bg-[#181818]'>
+      <Leftnavbar/>
+    </div>
   )
 }
 
