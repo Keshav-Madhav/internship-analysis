@@ -31,17 +31,18 @@ import { Pie } from 'react-chartjs-2';
 const InternshipsPieChart = () => {
 
   const data = {
-    labels: ['January', 'February', 'March', 'April', 'May'],
+    labels: ['2 Months', '3 Months', '4 Months', '6 Months', '8 Months', '12 Months'],
     datasets: [
       {
         label: 'Internships',
-        data: [6, 5, 3, 5, 2],
+        data: [20, 30, 25, 15, 5, 5],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
           'rgba(255, 206, 86, 0.2)',
           'rgba(75, 192, 192, 0.2)',
           'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
         ],
         borderColor: [
           'rgba(255, 99, 132, 1)',
@@ -49,6 +50,7 @@ const InternshipsPieChart = () => {
           'rgba(255, 206, 86, 1)',
           'rgba(75, 192, 192, 1)',
           'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
         ],
         borderWidth: 1,
       },
@@ -63,7 +65,7 @@ const InternshipsPieChart = () => {
         },
         title: {
           display: true,
-          text: 'Month',
+          text: 'Internship Duration',
         },
         ticks: {
           display: false, // Hide x-axis ticks
@@ -93,15 +95,22 @@ const InternshipsPieChart = () => {
           dataArr.map(data => {
             sum += data;
           });
-          let percentage = (value*100 / sum).toFixed(2)+"%";
-          return percentage;
+          let percentage = (value*100 / sum);
+          let decimalPart = percentage - Math.floor(percentage);
+          if(decimalPart === 0) {
+            percentage = Math.floor(percentage);
+          } else {
+            percentage = parseFloat(percentage.toFixed(1));
+          }
+          return percentage + "%";
         },
         color: '#fff',
-      }
+        font: {
+          size: 9, // You can adjust this value to decrease or increase the font size
+        },
+      }      
     },
   };
-  
-  
 
   return (
     <div className='h-[18rem] w-[18rem] p-[2rem]'>
