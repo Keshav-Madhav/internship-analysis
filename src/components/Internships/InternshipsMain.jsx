@@ -17,19 +17,21 @@ const JobsMain = () => {
         <hr className='w-full h-0.5 bg-gray-700'/>
       </div>
 
-      <div className='flex flex-col gap-2 w-full h-[48vh] justify-between'>
-        <p className='text-white text-xl px-2'>Internships Analytics</p>
-        <div className='flex gap-5 items-center w-[71vw] px-2 overflow-x-auto'>
-          <InternshipsBarGraph/>
-          <InternshipsPieChart/>
+      <div className='flex flex-col gap-4 h-[96vw] overflow-y-auto'>
+        <div className='flex flex-col gap-2 w-full h-[48vh] justify-between'>
+          <p className='text-white text-xl px-2'>Internships Analytics</p>
+          <div className='flex gap-5 items-center w-[71vw] px-2 overflow-x-auto'>
+            <InternshipsBarGraph/>
+            <InternshipsPieChart/>
+          </div>
+          <hr className='w-full h-0.5 bg-gray-700'/>
         </div>
-        <hr className='w-full h-0.5 bg-gray-700'/>
-      </div>
 
-      <div className='flex flex-col gap-2 w-full h-[43vh] justify-between'>
-        <div className='flex flex-col justify-between  w-full px-2'>
-          <h1 className='text-white text-xl'>Potential Positions</h1>
-          <InternshipsCards/>
+        <div className='flex flex-col gap-2 w-full h-[43vh] justify-between'>
+          <div className='flex flex-col justify-between  w-full px-2'>
+            <h1 className='text-white text-xl'>Potential Positions</h1>
+            <InternshipsCards/>
+          </div>
         </div>
       </div>
     </div>
