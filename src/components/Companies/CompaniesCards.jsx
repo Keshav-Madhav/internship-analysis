@@ -1,7 +1,6 @@
-import {Card,CardBody,Image,CardHeader,Divider, Button} from "@nextui-org/react";
-import Link from "next/link";
+import {Card,CardBody,CardFooter,Image,CardHeader,Divider,Chip, Button} from "@nextui-org/react";
 
-export default function InternshipsCards() {
+export default function CompaniesCards() {
 
   const colors = [
     {
@@ -143,15 +142,14 @@ export default function InternshipsCards() {
             <CardBody className="flex flex-row gap-1 flex-wrap h-fit items-center">
               <p className="text-sm pr-4">Skills:</p>
               {item.skills.map((skill,skillIndex) => (
-                <Link href={`/skills/${skill.replaceAll(" ", "_")}`} key={skillIndex}>
-                  <Button 
-                    variant="flat" 
-                    radius="full"
-                    className={`h-7 bg-[rgba(255,99,132,0.1)] border-[rgba(255,99,132,0.3)] border cursor-pointer hover:bg-[rgba(255,99,132,0.2)]`}
-                  >
-                    <p className="text-xs text-gray-300">{skill}</p>
-                  </Button>
-                </Link>
+                <Button 
+                  variant="flat" 
+                  radius="full"
+                  key={skillIndex}
+                  className={`h-7 bg-[rgba(255,99,132,0.1)] border-[rgba(255,99,132,0.3)] border cursor-pointer hover:bg-[rgba(255,99,132,0.2)]`}
+                >
+                  <p className="text-xs text-gray-300">{skill}</p>
+                </Button>
               ))}
             </CardBody>
           </Card>
