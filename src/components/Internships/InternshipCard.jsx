@@ -5,21 +5,21 @@ import Link from "next/link";
 
 const InternshipCard = ({item, color}) => {
   return (
-    <Card className="min-w-[20rem] max-w-[32vw] border-2 border-[rgba(255,99,132,0.8)]">
-      <Link className="text-lg" href={`/internships/${item.title.replaceAll(" ", "_")}`} onClick={(e)=> e.stopPropagation()}>
+    <Card className="min-w-[20rem] max-w-[34vw] border-2 border-[rgba(255,99,132,0.8)]">
+      <Link className="text-lg" href={`/internships/${item.position.replaceAll(" ", "_")}`} onClick={(e)=> e.stopPropagation()}>
         <CardHeader className="flex gap-3 p-3">
           <Image
-            alt={item.title}
+            alt={item.position}
             height={40}
             radius="sm"
             src={item.img}
             width={40}
           />
-          {item.title}
+          {item.position}
         </CardHeader>
       </Link>
 
-      <p className="px-2 pb-1">No. of jobs: {item.jobCount}</p>
+      <p className="px-2 pb-1">No. of jobs: {item.count}</p>
       <Divider/>
 
       <CardBody className="flex flex-row gap-1 flex-wrap h-fit items-center">
