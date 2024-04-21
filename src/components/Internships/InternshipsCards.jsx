@@ -1,8 +1,6 @@
-import {Card,CardBody,Image,CardHeader,Divider, Button} from "@nextui-org/react";
-import Link from "next/link";
+import InternshipCard from "./InternshipCard";
 
 export default function InternshipsCards() {
-
   const colors = [
     {
       body: "rgba(255,99,132,0.2)",
@@ -122,39 +120,11 @@ export default function InternshipsCards() {
     },
   ];
 
-
   return (
     <div className="w-[70vw] flex gap-x-5 gap-3 flex-wrap py-5">
       {list.map((item,index) => {
         return (
-          <Card className="min-w-[20rem] max-w-[32vw] border-2 border-[rgba(255,99,132,0.8)]" key={index}>
-            <CardHeader className="flex gap-3 p-3">
-              <Image
-                alt={item.title}
-                height={40}
-                radius="sm"
-                src={item.img}
-                width={40}
-              />
-              <p className="text-lg">{item.title}</p>
-            </CardHeader>
-            <p className="px-2 pb-1">No. of jobs: {item.jobCount}</p>
-            <Divider/>
-            <CardBody className="flex flex-row gap-1 flex-wrap h-fit items-center">
-              <p className="text-sm pr-4">Skills:</p>
-              {item.skills.map((skill,skillIndex) => (
-                <Link href={`/skills/${skill.replaceAll(" ", "_")}`} key={skillIndex}>
-                  <Button 
-                    variant="flat" 
-                    radius="full"
-                    className={`h-7 bg-[rgba(255,99,132,0.1)] border-[rgba(255,99,132,0.3)] border cursor-pointer hover:bg-[rgba(255,99,132,0.2)]`}
-                  >
-                    <p className="text-xs text-gray-300">{skill}</p>
-                  </Button>
-                </Link>
-              ))}
-            </CardBody>
-          </Card>
+          <InternshipCard item={item} color={colors[index % colors.length]} key={index} />
         );
       })}
     </div>

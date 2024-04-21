@@ -9,7 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@nextui-org/react": "^2.2.9",
+    "@nextui-org/modal": "^2.0.33",
+    "@nextui-org/react": "^2.3.5",
     "chart.js": "^4.4.2",
     "chartjs-plugin-datalabels": "^2.2.0",
     "framer-motion": "^11.0.8",
