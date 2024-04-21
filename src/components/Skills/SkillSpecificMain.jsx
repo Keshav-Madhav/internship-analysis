@@ -12,12 +12,12 @@ const SkillSpecificMain = ({skillName}) => {
     
   useEffect(() => {
     const getSearchResults = async () => {
-      const url = `https://google-search72.p.rapidapi.com/search?q=learn%20${skillName.replaceAll("_", "%20")}&gl=us&lr=lang_en&num=10&start=0`;
+      const url = `https://real-time-web-search.p.rapidapi.com/search?q=learn%20${skillName.replaceAll("_", "%20")}&limit=11`;
       const options = {
         method: 'GET',
         headers: {
           'X-RapidAPI-Key': 'bfa9890d21mshcd8092b1728c5bep1cacadjsn87ca49384f74',
-          'X-RapidAPI-Host': 'google-search72.p.rapidapi.com'
+          'X-RapidAPI-Host': 'real-time-web-search.p.rapidapi.com'
         }
       };
 
@@ -25,7 +25,7 @@ const SkillSpecificMain = ({skillName}) => {
         const response = await fetch(url, options);
         const result = await response.json();
         if(response.status === 200) {
-          setSearchResults(result.items);
+          setSearchResults(result.data);
         }
       } catch (error) {
         console.error(error);
