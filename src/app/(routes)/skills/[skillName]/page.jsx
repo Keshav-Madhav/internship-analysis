@@ -1,6 +1,12 @@
 import Leftnavbar from '@/components/Leftnavbar'
 import { Button } from '@nextui-org/react'
 
+
+export const metadata = {
+  title: 'Skills',
+  description: 'Skills page',
+};
+
 const page = async ({ params: { skillName } }) => {
 
   return (

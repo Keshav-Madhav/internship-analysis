@@ -1,6 +1,10 @@
 import Leftnavbar from '@/components/Leftnavbar'
 import JobsMain from '@/components/Internships/InternshipsMain'
 
+export const metadata = {
+  title: 'Internships',
+  description: 'Internships page',
+};
 
 const page = () => {
   return (

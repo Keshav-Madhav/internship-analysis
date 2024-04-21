@@ -4,22 +4,25 @@ import {Input} from "@nextui-org/react";
 import {EyeFilledIcon} from "./EyeFilledIcon";
 import {EyeSlashFilledIcon} from "./EyeSlashFilledIcon";
 import {Button} from "@nextui-org/react";
+import { toast } from 'sonner';
+import { accountsArray } from '@/utils/savedAccounts';
 
 const Login = () => {
 
   const [isVisible, setIsVisible] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
 
   const toggleVisibility = () => setIsVisible(!isVisible);
+
   const handleSignIn = () => {
-    // Validate email and password
-    if (email === 'yashvisingh@gmail.com' && password === 'yashvi123') {
-      // Redirect the user
-      window.location.href = '/jobs'; // Redirect to your desired URL
+    if (accountsArray.find((account) => account.email === email && account.password === password)) {
+      window.location.href = '/internships';
+      toast.success(`Welcome back ${accountsArray.find((account) => account.email === email).userName}!`, {
+        description: 'You have successfully logged in.'
+      });
     } else {
-      setError('Invalid email or password.');
+      toast.error('Invalid email or password.');
     }
   };
 
@@ -42,10 +45,9 @@ const Login = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         />
-        {error && <div className="text-red-500">{error}</div>}
         <div className='w-full h-full flex flex-col space-y-10'>
         <div className='flex items-start'><button className='text-white'>Forgot Password ?</button></div>
-        <Button className='text-white border-slate-300 bg-slate-600/60' color='primary' variant="bordered" onClick={handleSignIn}> Sign in </Button> 
+          <Button className='text-white border-slate-300 bg-slate-600/60' color='primary' variant="bordered" onClick={handleSignIn}> Sign in </Button> 
         </div>
         <div className='text-slate-600'>Don't have any account? <button className='text-slate-400'>Log in</button></div>
         </form>
