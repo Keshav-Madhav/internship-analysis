@@ -21,17 +21,18 @@ import {
   Legend
 );
 import { Bar } from 'react-chartjs-2';
+import { colors } from '@/utils/colors';
 
-const InternshipsBarGraph = () => {
+const InternshipsBarGraph = ({page, internshipsData}) => {
 
   const data = {
-    labels: ['Front End Dev', 'Backend Dev', 'Graphic Designer', 'Content Writer', 'Data Analyst', 'UI/UX Designer', 'Mobile App Dev', 'SEO Specialist', 'Digital Marketer', 'Network Engineer', 'Database Admin', 'System Analyst', 'Information Security', 'Full Stack Dev', 'Product Manager'],
+    labels: internshipsData.map((internship) => internship.position),
     datasets: [
       {
         label: 'Internships',
-        data: [30, 35, 40, 25, 20, 30, 35, 15, 20, 10, 15, 10, 5, 30, 10],
-        backgroundColor: 'rgba(153, 102, 255, 0.2)',
-        borderColor: 'rgba(153, 102, 255, 1)',
+        data: internshipsData.map((internship) => internship.count),
+        backgroundColor: colors[page % colors.length].body,
+        borderColor: colors[page % colors.length].border,
         borderWidth: 1,
       },
     ],

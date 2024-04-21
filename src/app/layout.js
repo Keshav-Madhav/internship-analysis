@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark overflow-x-hidden overflow-y-hidden">
       <link rel="icon" href="/icon.png" />
       <body className={inter.className}>
         <NextUIProvider>
