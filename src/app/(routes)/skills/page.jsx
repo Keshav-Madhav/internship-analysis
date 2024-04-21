@@ -1,5 +1,5 @@
 import Leftnavbar from '@/components/Leftnavbar'
-import JobsMain from '@/components/Internships/InternshipsMain'
+import SkillMain from '@/components/Skills/SkillMain';
 
 export const metadata = {
   title: 'Skills',
@@ -11,7 +11,7 @@ const page = () => {
     <div className='w-full h-full flex gap-2 bg-[#181818]'>
       <Leftnavbar/>
 
-      Skills Main
+      <SkillMain/>
     </div>
   )
 }
