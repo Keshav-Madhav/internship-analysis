@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const InternshipCard = ({item, color}) => {
   return (
-    <Card className="min-w-[20rem] max-w-[34vw] border-2 border-[rgba(255,99,132,0.8)]">
+    <Card className="min-w-[20rem] max-w-[34vw] w-[50%] border-2 border-[rgba(255,99,132,0.8)]">
       <Link className="text-lg" href={`/internships/${item.position.replaceAll(" ", "_")}`} onClick={(e)=> e.stopPropagation()}>
         <CardHeader className="flex gap-3 p-3">
           <Image

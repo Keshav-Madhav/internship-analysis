@@ -126,7 +126,7 @@ export default function CompaniesCards() {
     <div className="w-[70vw] flex gap-x-5 gap-3 flex-wrap py-5">
       {list.map((item,index) => {
         return (
-          <Card className="min-w-[20rem] max-w-[32vw] border-2 border-[rgba(255,99,132,0.8)]" key={index}>
+          <Card className="min-w-[20rem] max-w-[32vw] w-[50%] border-2 border-[rgba(255,99,132,0.8)]" key={index}>
             <CardHeader className="flex gap-3 p-3">
               <Image
                 alt={item.title}
